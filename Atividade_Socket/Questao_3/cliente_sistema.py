@@ -13,6 +13,8 @@ cliente.connect((IP, PORTA))
 print("================================")
 print(" CLIENTE DE CONTROLE REMOTO")
 print("================================")
+print("Conectado ao servidor.")
+
 
 while True:
 
@@ -42,7 +44,9 @@ while True:
         cliente.send("QUIT".encode("UTF-8"))
 
         resposta = cliente.recv(BUFFER).decode("UTF-8")
+
         print("\nServidor:", resposta)
+
         break
 
     else:
@@ -50,7 +54,9 @@ while True:
         continue
 
     resposta = cliente.recv(BUFFER).decode("UTF-8")
+
     print("\nServidor:", resposta)
+
 
 cliente.close()
 
